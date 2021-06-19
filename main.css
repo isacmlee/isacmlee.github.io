@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Avenir;
+}
+
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Project Gallery */ 
+table {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  border-collapse: collapse; 
+  background-color: rgba(90, 90, 90, 0.5);
+}
+
+th {
+    padding: .5em;
+}
+
+td {
+  padding: 0.5em;
+  width: 300px;
+  height: 200px;
+}
+
+th {
+  background: darkcyan;
+  color: black;
+  font-size: 30px;
+  border-radius: 0;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid black;
+  box-sizing: border-box;
+  color:white;
+}
+
+td:hover {
+  background-color: darkcyan;
+}
+/* End of Project Gallery */
+
+/* unvisited link */
+a:link {
+    text-decoration:none;
+}
+
+/* visited link */
+a:visited {
+    text-decoration:none;
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    text-decoration:none;
+}
+
+/* selected link */
+a:active {
+    text-decoration:none;
+}
+
+
+/* Navigation Bar */
+nav {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+}
+
+nav ul {
+  height: 50px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+nav ul li {
+  list-style-type: none;
+  width: 150px;
+  float: left;
+  text-align: center;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  line-height: 50px;
+  display: block;
+}
+
+li a:hover {
+  background-color: darkcyan;
+}
+/* End of Navigation Bar */ 
+
+/* Background Image */
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/* End of Background Image
