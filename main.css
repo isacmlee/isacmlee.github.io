@@ -55,6 +55,7 @@ td:hover {
 /* unvisited link */
 a:link {
     text-decoration:none;
+    color: white;
 }
 
 /* visited link */
@@ -71,6 +72,7 @@ a:hover {
 /* selected link */
 a:active {
     text-decoration:none;
+    color: white;
 }
 
 
