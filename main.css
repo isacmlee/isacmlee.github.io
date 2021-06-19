@@ -7,6 +7,10 @@ body {
   font-family: Avenir;
 }
 
+#card-title {
+  font: black;
+}
+
 .centered {
   text-align: center;
   margin: 0 auto;
@@ -55,13 +59,13 @@ td:hover {
 /* unvisited link */
 a:link {
     text-decoration:none;
-    color: white;
+    color: orange;
 }
 
 /* visited link */
 a:visited {
     text-decoration:none;
-    color: white;
+    color: orange;
 }
 
 /* mouse over link */
@@ -72,7 +76,6 @@ a:hover {
 /* selected link */
 a:active {
     text-decoration:none;
-    color: white;
 }
 
 
