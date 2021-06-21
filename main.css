@@ -5,10 +5,7 @@
 
 body {
   font-family: Avenir;
-}
-
-#card-title {
-  font: black;
+  color: white;
 }
 
 .centered {
@@ -59,13 +56,13 @@ td:hover {
 /* unvisited link */
 a:link {
     text-decoration:none;
-    color: orange;
+    color: white;
 }
 
 /* visited link */
 a:visited {
     text-decoration:none;
-    color: orange;
+    color: white;
 }
 
 /* mouse over link */
