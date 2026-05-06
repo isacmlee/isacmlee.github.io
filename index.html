@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isac Lee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Newsreader:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #1a1a1a;
+            --fg: #e8e6e1;
+            --fg-muted: #a8a8a8;
+            --border: #3a3a3a;
+            --accent: #6b9eff;
+            --hover: #242424;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .name {
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--fg);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 6rem 0 5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-title {
+            font-family: 'Newsreader', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            line-height: 1.4;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero-intro {
+            max-width: 480px;
+            color: var(--fg-muted);
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-links a {
+            color: var(--fg);
+            text-decoration: none;
+            padding-bottom: 2px;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s ease;
+        }
+
+        .hero-links a:hover {
+            border-color: var(--fg);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 4rem 0;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fg-muted);
+            margin-bottom: 3rem;
+        }
+
+        .project {
+            margin-bottom: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+            gap: 1.5rem;
+        }
+
+        .project-title {
+            font-family: 'Newsreader', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .project-year {
+            font-size: 0.8rem;
+            color: var(--fg-muted);
+            white-space: nowrap;
+        }
+
+        .project-description {
+            color: var(--fg-muted);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            color: var(--fg-muted);
+            padding: 0.25rem 0.65rem;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            letter-spacing: 0.03em;
+        }
+
+        .project-link {
+            font-size: 0.85rem;
+            color: var(--fg);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1px;
+            transition: border-color 0.2s ease;
+        }
+
+        .project-link:hover {
+            border-color: var(--fg);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0 4rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--fg-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--fg);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+        }
+
+        /* Subtle animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .project {
+                opacity: 0;
+                animation: fadeIn 0.6s ease-out forwards;
+            }
+
+            .project:nth-child(1) { animation-delay: 0.1s; }
+            .project:nth-child(2) { animation-delay: 0.2s; }
+            .project:nth-child(3) { animation-delay: 0.3s; }
+            .project:nth-child(4) { animation-delay: 0.4s; }
+            .project:nth-child(5) { animation-delay: 0.5s; }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1 class="name">Isac Lee</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="mailto:hello@isaclee.com">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h2 class="hero-title">
+                Building <em>extraordinarily ordinary</em> apps for my extraordinary, ordinary life.
+            </h2>
+            <p class="hero-intro">
+                I'm an indie developer creating small, focused apps that solve real problems. No unnecessary features, no bloat—just software that does exactly what it needs to do.
+            </p>
+            <div class="hero-links">
+                <a href="https://github.com/isacmlee">GitHub</a>
+                <a href="https://twitter.com/isacmlee">Twitter</a>
+                <a href="mailto:hello@isaclee.com">Email</a>
+            </div>
+        </section>
+
+        <main id="work" class="projects">
+            <p class="section-label">Selected Projects</p>
+
+            <article class="project">
+                <div class="project-header">
+                    <h3 class="project-title">QuickNote</h3>
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-description">
+                    A frictionless note-taking app that captures thoughts in under 2 seconds. No folders, no tags, just instant capture and intelligent search.
+                </p>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span class="tag">iOS</span>
+                        <span class="tag">Swift</span>
+                        <span class="tag">CoreML</span>
+                    </div>
+                    <a href="#" class="project-link">View on App Store →</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-header">
+                    <h3 class="project-title">MealPlan</h3>
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-description">
+                    Weekly meal planning that actually works. Generates shopping lists from your favorites, tracks what's in your fridge, suggests recipes based on what expires soon.
+                </p>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">PWA</span>
+                    </div>
+                    <a href="#" class="project-link">Try demo →</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-header">
+                    <h3 class="project-title">FocusBlocks</h3>
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-description">
+                    Time-blocking for people who hate time-blocking. Drag tasks into your calendar, get realistic estimates, and protect your focus time automatically.
+                </p>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span class="tag">macOS</span>
+                        <span class="tag">SwiftUI</span>
+                        <span class="tag">EventKit</span>
+                    </div>
+                    <a href="#" class="project-link">Download beta →</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-header">
+                    <h3 class="project-title">HabitStack</h3>
+                    <span class="project-year">2023</span>
+                </div>
+                <p class="project-description">
+                    Habit tracking without the guilt. Track what matters, celebrate small wins, and build consistency without perfectionism.
+                </p>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span class="tag">iOS</span>
+                        <span class="tag">HealthKit</span>
+                        <span class="tag">Widgets</span>
+                    </div>
+                    <a href="#" class="project-link">Coming soon →</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-header">
+                    <h3 class="project-title">ReadQueue</h3>
+                    <span class="project-year">2023</span>
+                </div>
+                <p class="project-description">
+                    Save articles, newsletters, and PDFs to read later. Strips away distractions, syncs across devices, and reminds you gently.
+                </p>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span class="tag">Web</span>
+                        <span class="tag">Extension</span>
+                        <span class="tag">Reader Mode</span>
+                    </div>
+                    <a href="#" class="project-link">Visit site →</a>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2024 Isac Lee</p>
+                <div class="footer-links">
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="mailto:hello@isaclee.com">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
